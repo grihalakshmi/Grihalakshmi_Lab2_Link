@@ -1,0 +1,278 @@
+<!-- the foundation of this code comes from [1]. See reflective analysis for source links-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Fly to a location based on scroll position</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+#map {
+position: fixed;
+width: 50%;
+}
+#features {
+width: 50%;
+margin-left: 50%;
+font-family: sans-serif;
+overflow-y: scroll;
+background-color: #b8b4b4;
+}
+section {
+padding: 25px 50px;
+line-height: 25px;
+border-bottom: 1px solid #ddd;
+opacity: 0.25;
+font-size: 13px;
+}
+section.active {
+opacity: 1;
+}
+section:last-child {
+border-bottom: none;
+margin-bottom: 200px;
+}
+</style>
+ 
+<div id="map"></div>
+<div id="features">
+<section id="The Classical Dance Forms of India" class="active">
+<h3>The Classical Dance Forms of India</h3>
+<p>
+The Indian subcontinent is known for it's rich and diverse culture. An integral part of this culture is performing arts, and most notably, dance. The 8 different Indian classical dance forms are: Kathak, Sattriya, Manipuri, Odissi, Kuchipudi, Bharatanatyam, Mohiniyattam, and Kathakali. Each originating from a different state, they display the gradual variations of culture, music, and language from North to South India. Though each dance form has it's own unique history, footwork, hand gestures, stylistic components, and response to the renaissance of dance in India, all of these dance forms were born centuries ago, and are all rooted in the Natya Sastra, or the ancient Sanskrit text of Indian performing arts, which guides how these dance forms should be taught, practiced, and performed. Ultimately, these dance forms all revolve around some aspect of spirituality, worship of Hindu Gods and mythologies, and storytelling through dance. 
+
+Scroll through, and move from North to South India to learn more about each dance form! 
+
+</p>
+</section>
+<section id="kathak">
+<h3>Kathak</h3>
+<p>
+We start in the most Northern state of Uttar Pradesh, which is home to the style of Kathak. The word Kathak originates from the coupling of the Sanskrit words "Katha" which means story, and "Kathakar" which is a storyteller. Therefore, Kathak originated through storytellers that would travel the regions of North India, sharing stories through dance. Through time, Kathak dancers became popularly known as dancers of the King’s Court. They were often asked to perform for royals, their guests, and the entire kingdom. Because they were recognized for their art, and were in such close proximity to Kings and the royals, Kathak dancers were given utmost respect and known to be among the higher social class amongst the common people. Kathak dance is practiced worldwide today, and is characterized by it’s beautiful repetitive spins and intricate footwork. Compared to the rest of the dance forms, Kathak has less leg bends an is done mostly standing straight. Take a look at the video below to see a glimpse of Kathak dance! 
+
+<!-- this is the embedded code from YouTube. THIS IS LAYER 3 OF INTERACTIVITY-->
+<iframe width="500" height="300" src="https://www.youtube.com/embed/CYf1HIy-QsE" 
+frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="sattriya">
+<h3>Sattriya</h3>
+<p>
+As the least known and least widespread dance form of the octet, Sattriya is most commonly performed in praise of the Hindu Gods of Krishna, and his love stories. Derived from the state of Assam, Sattriya is known most for it’s dance-drama nature, and is often performed as “one-act” plays. Due to Assam’s proximity to Southeast Asia, and therefore Buddhism, Sattriya was originally only performed by male monks in monasteries, but has since involved to include all men and women. Take a look at Sattriya being performed below! 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PZF5MJ5kqcs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="manipuri">
+<h3>Manipuri</h3>
+<p>
+From the get-go, one thing sets Manipuri apart from all the other dance forms: the costumes! With the most unique and vastly different costume of all, Manipuri originated from the state of Manipur, and similar to Sattriya, often depicts Lord Krishna and his love for Radha. Also similar to Sattriya, Manipuri is not very widespread, and it is difficult to find Manipuri dancers outside of India. This dance form is recognized most by the Meitei people of Manipur, who incorporate Manipuri as an important element in milestone events such as weddings. Look at the costumes below! 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3RISY7LU3u0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="odissi">
+<h3>Odissi</h3>
+<p>
+If you watch the video below, you can tell that Odissi has many more bends, curvatures, and "roundness" of choreography compared to the other styles. The head ornaments and waist belt worn are also unique. As we make our way from North to South India, we now stop at Odisha, where Odissi is derived from. Odissi sets itself apart in terms of technicality as well. It places importance on "Tribhangi", or the isolated movement of the head, chest, and pelvis. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1wX5yHh6DHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="kuchipudi">
+<h3>Kuchipudi</h3>
+<p>
+Now, we have entered South India! Kuchipudi displays a relationship with temples and worship. It's name comes from a village in Andhra Pradesh named Kuchipudi, which is where the dance form originated from. More widespread in it's practice today compared to Sattriya and Manipuri, a Kuchipudi repertoire starts off with an introduction of each actor (a dancer in the dance-drama), and then proceeds to short segments of dance that show pure dance/footwork or facial expressions and storytelling. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ITxzKb2JWbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="bharatanatyam">
+<h3>Bharatanatyam</h3>
+<p>
+Originating from the state of Tamil Nadu, Bharatanatyam is derived from the root words "Bha" meaning expressions, "Ra" meaning tune of the music, "Ta" meaning beats, and "Natyam" meaning dance. Hence, it is a dance form which culminates facial expressions, music, and beats, to tell stories and showcase pure dance elements. Today, Bharatanatyam is one of the most widelyspread of the octet, and is practiced all over the world. Similar in costuming to Kuchipudi and Mohiniyattam, Bharatanatyam is known for the mathematical nature of it's choreography, as angles and alignment play an integral role, along with powerful footwork.
+
+
+<iframe width="565" height="315" src="https://www.youtube.com/embed/fgJ0zBewzps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="mohiniyattam">
+<h3>Mohiniyattam</h3>
+<p>
+Known to be a very sweet and simple style, Mohiniyattam revolves mainly around facial expressions and storytelling, with very few heavy footwork elements. Also known to be very beautiful, Mohiniyattam is very feminine and delicate in nature, and is predominantly performed as a solo. Originating from the state of Kerala, Mohiniyattam's name comes from "Mohini", the name of a mythical female avatar in Hindu mythologies. Take a look at this dance style below! 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oO6GT1sh7ms" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="kathakali">
+<h3>Kathakali</h3>
+<p>
+The state of Kerala is lucky to have yet another classical dance form originate from its soil. Known globally for the extensive make up, face masks, and costuming involved, Kathakali is a cherished style that always makes the audience in awe, and very few people in the world are trained in its excellence. Eye movements and showing emotions purely through the eyes is a speciality of Kathakali, and the difficulty of conveying stories in this manner is what sets Kathakali apart from the rest of the octet. Another unique factor is that this style incorporates elements of Indian martial arts into it's choreography. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tl3UKV1z9lM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</section>
+<section id="So, What is Next?">
+<h3>So, What's Next?</h3>
+<p>
+After discussing the 8 classical dance forms of India, we can travel across the world to our home in the Lower Mainland, where dancers and enthusiasts of these art forms can come together and build a community. One such platform that provides this is Asta Alliance (Asta means 8 in Sanskrit), which is a registered non-profit that actively promotes these dance forms through the curation of annual shows, workshops, and events! If you are interested, you can view their page <a href="https://www.facebook.com/asta.alliance/">here</a>! <!-- text link help from http://www.echoecho.com/htmltext03.htm -->
+</p>
+</section>
+<section id="So, What is Next?">
+<h3></h3>
+<p>
+</p>
+</section>
+<section id="Asta Photo" class="active">
+<h3></h3>
+<img src="ASTA NEW LOGO.png">
+<p>
+</p>
+</section>
+<section id="Asta Photo" class="active">
+<h3></h3>
+<p>
+<small id="citation">
+Adapted from
+<a href="http://www.gutenberg.org/files/2346/2346-h/2346-h.htm"
+>Project Gutenberg</a
+>
+</small>
+</section>
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JpaGFsYWtzaG1pIiwiYSI6ImNrNmhldWZsYzE3bDYzbHA2OTRzNGE4eHkifQ.D3NXSa0WKVqiUvnwmJaJIQ';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/grihalakshmi/ck7baiohv05ee1intyiybmi7t', // Using my Mapbox style, and most importantly the dark basemap 
+center: [81.468, 21.896],
+zoom: 3.85,
+bearing: 0,
+pitch: 0
+});
+ 
+var chapters = {
+'The Classical Dance Forms of India': {
+bearing: 0,
+center: [81.468, 21.896],
+zoom: 3.85,
+pitch: 0
+},
+
+//All of the zoom fuctions are higher than 6, so that the States can change colours and aid in highlighting the regions of importance 
+
+'kathak': {
+duration: 6000,
+center: [80.894, 27.154],
+bearing: 0,
+zoom: 6.11,
+pitch: 0
+},
+'sattriya': {
+bearing: 0,
+center: [92.690941, 26.344169],
+zoom: 6.11,
+speed: 0.6,
+pitch: 0
+},
+'manipuri': {
+bearing: 0,
+center: [94.002719, 24.807102],
+zoom: 6.11
+},
+'odissi': {
+bearing: 0,
+center: [84.457500, 20.634895],
+zoom: 6.11,
+pitch: 0,
+speed: 0.5
+},
+'kuchipudi': {
+bearing: 0,
+center: [79.093286, 14.531217],
+zoom: 6.11
+},
+'bharatanatyam': {
+bearing: 0,
+center: [78.592976, 10.811879],
+zoom: 6.5,
+pitch: 0
+},
+'mohiniyattam': {
+bearing: 0,
+center: [76.707461, 9.931480],
+zoom: 6.9,
+pitch: 0
+},
+'kathakali': {
+bearing: 0,
+center: [76.360601, 10.812883],
+zoom: 6.8,
+pitch: 0
+},
+'So, What is Next?': {
+bearing: 0,
+center: [-123.037137, 49.248776],
+zoom: 10,
+pitch: 0
+}
+};
+
+// The scroll function is the basis of the story map. This is LAYER 2 OF INTERACTIVITY
+window.onscroll = function() {
+var chapterNames = Object.keys(chapters);
+for (var i = 0; i < chapterNames.length; i++) {
+var chapterName = chapterNames[i];
+if (isElementOnScreen(chapterName)) {
+setActiveChapter(chapterName);
+break;
+}
+}
+};
+ 
+var activeChapterName = 'The Classical Dance Forms of India';
+function setActiveChapter(chapterName) {
+if (chapterName === activeChapterName) return;
+ 
+map.flyTo(chapters[chapterName]);
+ 
+document.getElementById(chapterName).setAttribute('class', 'active');
+document.getElementById(activeChapterName).setAttribute('class', '');
+ 
+activeChapterName = chapterName;
+}
+ 
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+map.on('click', function(e) {
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['indian-classical-dance-forms (1)'] // This is the name of the dataset layer that was created with all of the point features 
+  });
+
+  if (!features.length) {
+    return;
+  }
+
+  var feature = features[0];
+
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML(feature.properties.Dance) // This is the attribute that the markers are laballed with upon mouse click (LAYER 1 OF INTERACTIVITY)
+    .addTo(map);
+}); 
+</script>
+ 
+</body>
+</html>
